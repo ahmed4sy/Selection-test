@@ -1,9 +1,16 @@
-export default function Page({ children }) {
+import "./../Styles/Page.css";
+export default function Page({ setShpop, children }) {
   return (
-    <div>
+    <div className="page">
       <h1>Selection Exam</h1>
-      <hr />
-      <button>Create</button>
+      <button
+        className="cre"
+        onClick={() => {
+          setShpop("");
+        }}
+      >
+        +
+      </button>
       {children}
     </div>
   );

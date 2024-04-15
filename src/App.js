@@ -1,17 +1,20 @@
 import Page from "./Componets/Page";
-import PopUp from "./Componets/Exam";
-import Exam from "./Componets/PopUp";
+import Exam from "./Componets/Exam";
+import PopUp from "./Componets/PopUp";
 import ShowCon from "./Componets/ShowCon";
 import "./Styles/App.css";
+import { useState } from "react";
 function App() {
+  let [Shpop, setShpop] = useState("hide");
+  let [Exm, setExm] = useState(["Examble", ["one con", "two con", "th con"]]);
   return (
     <div className="App">
-      <header className="App-header">
-        <Page>
+      <header>
+        <PopUp act={false} Shpop={Shpop} setShpop={setShpop} setExm={setExm} />
+        <Page Shpop={Shpop} setShpop={setShpop}>
           <ShowCon>
-            <Exam />
+            <Exam Exm={Exm} />
           </ShowCon>
-          <PopUp act={false} />
         </Page>
       </header>
     </div>
