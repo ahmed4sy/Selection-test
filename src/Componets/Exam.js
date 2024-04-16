@@ -3,22 +3,22 @@ export default function Exam({ Exm, oneEx, twoEx, thEx }) {
   return (
     <div className="exam">
       <div className="ps">
-        <p className="us">User</p>
-        <p>{Exm[0]}</p>
+        <p className="us">{Exm.title}</p>
+        <p>{Exm.artcle}</p>
       </div>
 
       <div className="inps">
         <div>
           <input type="radio" name="sele" value="{oneEx}" />
-          <label>{Exm[1][0]}</label>
+          <label>{Exm.sele[0]}</label>
         </div>
         <div>
           <input type="radio" name="sele" value="{oneEx}" />
-          <label>{Exm[1][1]}</label>
+          <label>{Exm.sele[1]}</label>
         </div>
         <div>
           <input type="radio" name="sele" value="{oneEx}" />
-          <label>{Exm[1][2]}</label>
+          <label>{Exm.sele[2]}</label>
         </div>
       </div>
     </div>
