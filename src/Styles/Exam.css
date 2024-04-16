@@ -40,4 +40,8 @@
     font-family:cursive;
     border-radius: 15px;
     box-shadow: 5px -5px 5px;
-}
+}.green {
+    color:green;
+  }.red {
+    color: red;
+  }

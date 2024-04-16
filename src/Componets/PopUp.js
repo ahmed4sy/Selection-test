@@ -39,6 +39,9 @@ export default function PopUp({ Shpop, Exm, setExm, setShpop }) {
                 className="radio"
                 name="sele"
                 value="{oneEx}"
+                onChange={() => {
+                  setGet({ ...Get, this: [true, false, false] });
+                }}
               />
               <input
                 type="text"
@@ -57,6 +60,9 @@ export default function PopUp({ Shpop, Exm, setExm, setShpop }) {
                 className="radio"
                 name="sele"
                 value="{oneEx}"
+                onChange={() => {
+                  setGet({ ...Get, this: [false, true, false] });
+                }}
               />
               <input
                 type="text"
@@ -75,6 +81,9 @@ export default function PopUp({ Shpop, Exm, setExm, setShpop }) {
                 className="radio"
                 name="sele"
                 value="{oneEx}"
+                onChange={() => {
+                  setGet({ ...Get, this: [false, false, true] });
+                }}
               />
               <input
                 type="text"

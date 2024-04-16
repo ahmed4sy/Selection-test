@@ -8,9 +8,9 @@ function App() {
   let [Exples, setExples] = useState([
     {
       id: 1,
-      title: "User",
-      artcle: "Examssskr r rr",
-      sele: ["one con", "two con", "th con"],
+      title: "Ahmed",
+      artcle: "How old am i?",
+      sele: ["17", "17.5", "18"],
       this: [false, true, false],
     },
   ]);
