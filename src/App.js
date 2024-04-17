@@ -4,7 +4,7 @@ import PopUp from "./Componets/PopUp";
 import ShowCon from "./Componets/ShowCon";
 import "./Styles/App.css";
 import { useState } from "react";
-localStorage.setItem("Exp", null);
+
 function loadExp() {
   if (localStorage.getItem("Exp") !== "null") {
     return JSON.parse(localStorage.getItem("Exp"));
@@ -24,17 +24,26 @@ function saveExp(data) {
 }
 function App() {
   let [Exples, setExples] = useState(loadExp);
-
+  let [Head, setHead] = useState("hide");
   let [Shpop, setShpop] = useState("hide");
 
   const EXS = Exples.map((exp) => {
     return <Exam Exm={exp} Key={exp.id} key={exp.id} />;
   });
   saveExp(Exples);
-
   return (
     <div className="App">
-      <header>
+      <button
+        onClick={() => {
+          localStorage.setItem("Exp", null);
+          setHead("");
+        }}
+        id="but"
+        className={Head === "hide" ? "" : "hide"}
+      >
+        Install
+      </button>
+      <header className={Head}>
         <PopUp
           act={false}
           Shpop={Shpop}

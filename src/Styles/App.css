@@ -24,3 +24,13 @@ body{
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.hide {
+  display: none;
+}
+.App #but {
+  margin-left: 43%;
+  margin-top: 20%;
+  width: 150px;
+  height: 50px;
+  font-size: 25px;
+}
