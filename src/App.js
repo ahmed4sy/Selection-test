@@ -4,24 +4,21 @@ import PopUp from "./Componets/PopUp";
 import ShowCon from "./Componets/ShowCon";
 import "./Styles/App.css";
 import { useState } from "react";
-localStorage.setItem("bb", true);
-if (localStorage.getItem("bb") === "true") {
-  localStorage.setItem("Exp", null);
-  localStorage.setItem("bb", false);
-}
+
 function loadExp() {
-  if (localStorage.getItem("Exp") !== "null") {
-    return JSON.parse(localStorage.getItem("Exp"));
+  if (!localStorage.Exp) {
+    localStorage.setItem("Exp");
+    return [
+      {
+        id: 1,
+        title: "Ahmed",
+        artcle: "How old am i?",
+        sele: ["17", "17.5", "18"],
+        this: [false, true, false],
+      },
+    ];
   }
-  return [
-    {
-      id: 1,
-      title: "Ahmed",
-      artcle: "How old am i?",
-      sele: ["17", "17.5", "18"],
-      this: [false, true, false],
-    },
-  ];
+  return JSON.parse(localStorage.getItem("Exp"));
 }
 function saveExp(data) {
   localStorage.setItem("Exp", JSON.stringify(data));
