@@ -4,7 +4,6 @@ import PopUp from "./Componets/PopUp";
 import ShowCon from "./Componets/ShowCon";
 import "./Styles/App.css";
 import { useState } from "react";
-localStorage.setItem("Exp", null);
 function loadExp() {
   if (localStorage.getItem("Exp") !== "null") {
     return JSON.parse(localStorage.getItem("Exp"));
