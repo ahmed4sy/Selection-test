@@ -1,10 +1,21 @@
 import { useState } from "react";
 import "./../Styles/Exam.css";
-export default function Exam({ Exm }) {
+export default function Exam({ Exm, Key }) {
   let [On, setOn] = useState(false);
+  let [Show, setShow] = useState("exam");
   return (
-    <div className="exam">
+    <div className={Show}>
       <div className="ps">
+        <button
+          onClick={() => {
+            let nsk = JSON.parse(localStorage.getItem("Exp"));
+            nsk.splice(Key - 1, 1);
+            localStorage.setItem("Exp", JSON.stringify(nsk));
+            setShow("hide");
+          }}
+        >
+          X
+        </button>
         <p className="us">{Exm.title}</p>
         <p>{Exm.artcle}</p>
       </div>

@@ -100,18 +100,29 @@ export default function PopUp({ Shpop, Exm, setExm, setShpop }) {
         </div>
         <button
           onClick={() => {
-            setExm([...Exm, Get]);
-            setIdp((id) => {
-              return id + 1;
-            });
-            setGet({
-              id: 0,
-              title: "",
-              artcle: "",
-              sele: ["", "", ""],
-              this: [false, false, false],
-            });
-            setShpop("hide");
+            if (
+              (Get.this[0] !== false ||
+                Get.this[1] !== false ||
+                Get.this[2] !== false) &&
+              Get.title !== "" &&
+              Get.artcle !== "" &&
+              Get.sele[0] !== "" &&
+              Get.sele[1] !== "" &&
+              Get.sele[2] !== ""
+            ) {
+              setExm([...Exm, Get]);
+              setIdp((id) => {
+                return id + 1;
+              });
+              setGet({
+                id: 0,
+                title: "",
+                artcle: "",
+                sele: ["", "", ""],
+                this: [false, false, false],
+              });
+              setShpop("hide");
+            }
           }}
         >
           Send

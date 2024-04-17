@@ -6,9 +6,21 @@
     padding-right: 15px;
     padding-left: 15px;
 }
+.ps button {
+    display: inline-block ;
+    margin-right:10px ;
+    transition: .2s;
+}.ps button:hover {
+    border: none;
+    background-color: red;
+    color: white;
+
+}
+.us {
+    display: inline-block ;
+}
 .ps p {
     text-align: left;
-    display: block;
 }.ps .us{
     margin-bottom: 5px;
 

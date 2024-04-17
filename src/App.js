@@ -4,8 +4,11 @@ import PopUp from "./Componets/PopUp";
 import ShowCon from "./Componets/ShowCon";
 import "./Styles/App.css";
 import { useState } from "react";
-function App() {
-  let [Exples, setExples] = useState([
+function loadExp() {
+  if (localStorage.getItem("Exp") !== "null") {
+    return JSON.parse(localStorage.getItem("Exp"));
+  }
+  return [
     {
       id: 1,
       title: "Ahmed",
@@ -13,13 +16,21 @@ function App() {
       sele: ["17", "17.5", "18"],
       this: [false, true, false],
     },
-  ]);
+  ];
+}
+function saveExp(data) {
+  localStorage.setItem("Exp", JSON.stringify(data));
+}
+function App() {
+  let [Exples, setExples] = useState(loadExp);
+
   let [Shpop, setShpop] = useState("hide");
 
   const EXS = Exples.map((exp) => {
-    return <Exam Exm={exp} key={exp.id} />;
+    return <Exam Exm={exp} Key={exp.id} key={exp.id} />;
   });
-  console.log(Exples);
+  saveExp(Exples);
+
   return (
     <div className="App">
       <header>
