@@ -7,7 +7,7 @@ import { useState } from "react";
 
 function loadExp() {
   if (!localStorage.Exp) {
-    localStorage.setItem("Exp");
+    localStorage.setItem("Exp", null);
     return [
       {
         id: 1,
